@@ -2,14 +2,12 @@ __pycache__/
 
 # PyCharm
 .idea
-
 *mp4
 *jpeg
 *jpg
 *jepg
 *png
 *pkl
-*txt
 *mov
 nohup.out
 *zip
