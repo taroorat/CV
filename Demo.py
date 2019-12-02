@@ -6,15 +6,11 @@ import os
 for path in os.listdir('images/keypoint/aa/'):
     image = cv2.imread('images/keypoint/aa/'+path)
     h, w = image.shape[:2]
-    gray_img = np.zeros((h, w), dtype=np.uint8)
     line_img = np.zeros((h, w,3), dtype=np.uint8)
 
-    for i in range(h):
-        for j in range(w):
-            if image[i,j][0]>0 or image[i,j][1] >0 or image[i,j][2] >0:
-                gray_img[i,j]=255
-
-    # cv2.imwrite('gray.jpg',gray_img)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    gaus = cv2.GaussianBlur(gray, (3, 3), 0)
+    gray_img = cv2.Canny(gaus, 50, 150, apertureSize=3)
 
     minLineLength = 5
     maxLineGap = 1
