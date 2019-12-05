@@ -16,11 +16,11 @@ def save_image(image, filename, path='.'):
 def getSeg(dir_path,file_path):
     srcfile=dir_path+'/'+file_path
     print(srcfile)
-    resfile='resimgs/'+srcfile[-9:]
+    resfile='resimgs/'+srcfile[-10:]
     print(resfile)
     if resfile[8:] not in os.listdir('resimgs/'):
 
-        print(2, resfile[9:] )
+        print(2, resfile[8:] )
         url='https://api-cn.faceplusplus.com/humanbodypp/v2/segment'
         d = {"api_key":"UjmoCBhB3Jpmtbgc2MxpT8c3LjuZ5NwC",
              "api_secret": "q0qPbyhW4vlWyQoe_zH1pcJTmW_edu_Z",
