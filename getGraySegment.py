@@ -1,17 +1,5 @@
 import requests
 import os,base64
-import time
-import numpy as np
-import cv2
-from PIL import Image
-
-def save_image(image, filename, path='.'):
-    extension = '.png'
-    if extension != filename[-4:]:
-        filename += extension
-
-    path = os.path.join(path, filename)
-    image.save(path, "PNG")
 
 def getSeg(dir_path,file_path):
     srcfile=dir_path+'/'+file_path
@@ -34,7 +22,6 @@ def getSeg(dir_path,file_path):
             print(imgdata)
             with open(resfile,'wb') as f:
                 f.write(imgdata)
-            save_image(imgdata, (resfile))
 
         except Exception as e:
             print(e)
