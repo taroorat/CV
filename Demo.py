@@ -3,8 +3,8 @@ import numpy as np
 import random
 import os
 
-for path in os.listdir('images/keypoint/aa/'):
-    image = cv2.imread('images/keypoint/aa/'+path)
+for path in os.listdir('images/keypoint/dajiwu/'):
+    image = cv2.imread('images/keypoint/dajiwu/'+path)
     h, w = image.shape[:2]
     line_img = np.zeros((h, w,3), dtype=np.uint8)
 
@@ -20,5 +20,5 @@ for path in os.listdir('images/keypoint/aa/'):
     for i in range(len(lines)):
         for x1,y1,x2,y2 in lines[i]:
             cv2.line(line_img,(x1,y1),(x2,y2),(random.randint(0,255),random.randint(0,255),random.randint(0,255)),30)
-    cv2.imwrite('images/outputs/aa/'+path,line_img)
+    cv2.imwrite('images/outputs/dajiwu/'+path,line_img)
 
