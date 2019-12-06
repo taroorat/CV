@@ -1,5 +1,5 @@
 import requests
-import os,base64
+import os,base64,time
 
 def getSeg(dir_path,file_path):
     srcfile=dir_path+'/'+file_path
@@ -29,6 +29,10 @@ def getSeg(dir_path,file_path):
         print(1)
 
 if __name__ =='__main__':
-    dir = 'images/dajiwu/'
-    for i in os.listdir(dir):
-        getSeg(dir,i)
+    dir = 'images/dance/'
+    print(len(os.listdir(dir)))
+    print(len(os.listdir('resimgs/')))
+    while (len(os.listdir(dir)) != len(os.listdir('resimgs/'))):
+        for i in os.listdir(dir):
+            getSeg(dir,i)
+        time.sleep(3)
